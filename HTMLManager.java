@@ -32,6 +32,7 @@ public class HTMLManager {
          tags.add(val);  
       } 
          else if(val.isOpening()) { //is true
+            stack.push(val); 
          
       } else { //isClosing Scenario
          
