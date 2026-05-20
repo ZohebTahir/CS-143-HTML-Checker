@@ -20,10 +20,14 @@ public class HTMLManager {
    public String toString() {
       String str = "";
       for(HTMLTag t: tags) {
-        str += t;  
+        str += t.toString();  
       }
       return str; 
    }
    
+   public void fixHTML() {
+      Stack<String> stack = Stack<>(); 
+      
+   }
    
 }
