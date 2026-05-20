@@ -26,7 +26,16 @@ public class HTMLManager {
    }
    
    public void fixHTML() {
-      Stack<String> stack = Stack<>(); 
+      Stack<String> stack = new Stack<>(); 
+      HTMLTag val = tags.remove();
+      if(val.isSelfClosing()) {
+         tags.add(val);  
+      } 
+         else if(val.isOpening()) { //is true
+         
+      } else { //isClosing Scenario
+         
+      }
       
    }
    
