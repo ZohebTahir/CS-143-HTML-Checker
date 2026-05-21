@@ -40,11 +40,12 @@ public class HTMLManager {
          
          } else if(val.isClosing()){ //isClosing Scenario
             //HTMLTag stackPeek = stack.peek();
-            if(val.matches(stack.peek()) && !stack.isEmpty()) {
+            if(!stack.isEmpty() && val.matches(stack.peek())) {
                tags.add(val);
                stack.pop();  
-            }  else if(!stack.isEmpty()){
-               tags.add(val); 
+            } else if (stack.isEmpty()) {
+               tags.add(val);
+               stack.push(val);
             } 
             else {
                HTMLTag matchFix = val.getMatching();
