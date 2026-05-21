@@ -43,15 +43,17 @@ public class HTMLManager {
             if(!stack.isEmpty() && val.matches(stack.peek())) {
                tags.add(val);
                stack.pop();  
-            } else if (stack.isEmpty()) {
-               tags.add(val);
-               stack.push(val);
-            } 
-            else {
+            } else if (!stack.isEmpty() && !val.matches(stack.peek())) {
                HTMLTag matchFix = val.getMatching();
                tags.add(matchFix);
-               stack.pop();   
-            }
+               stack.pop();
+            } 
+            //else if(!val.matches(stack.peek())){
+               //HTMLTag matchFix = val.getMatching();
+               //tags.add(matchFix);
+               //stack.pop();
+                 
+            //}
                   
          }
       }
