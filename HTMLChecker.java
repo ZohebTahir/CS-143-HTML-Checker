@@ -78,7 +78,7 @@ public class HTMLChecker {
 /*
 # PROGRAM OUTPUT
 
- ===============================
+===============================
  Processing tests/test3.html...
  ===============================
  HTML: <br /></p></p>
@@ -91,10 +91,8 @@ public class HTMLChecker {
  ===============================
  HTML: <a><a><a></a>
  Checking HTML for errors...
- HTML after fix: <a><a><a></a>
- ----> Something isn't working right! 
- Fixed HTML should be: 
- <a><a><a></a></a></a>
+ HTML after fix: <a><a><a></a></a></a>
+ ----> Result matches Expected Output!
  
  ===============================
  Processing tests/test5.html...
@@ -111,7 +109,7 @@ public class HTMLChecker {
  ===============================
  HTML: <div><div><ul><li></li><li></li><li></ul></div>
  Checking HTML for errors...
- HTML after fix: <div><div><ul><li></li><li></li><li><ul><div>
+ HTML after fix: <div><div><ul><li></li><li></li><li><ul><div></div></div>
  ----> Something isn't working right! 
  Fixed HTML should be: 
  <div><div><ul><li></li><li></li><li></li></ul></div></div>
@@ -127,7 +125,7 @@ public class HTMLChecker {
  <b><i><br /></i></b>
  
  ===============================
- Failed tests: test2.html test5.html test4.html test1.html 
+ Failed tests: test5.html test4.html test1.html 
  ===============================
 
 */

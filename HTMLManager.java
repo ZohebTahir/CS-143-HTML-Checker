@@ -34,16 +34,18 @@ public class HTMLManager {
          if(val.isSelfClosing()) {
             tags.add(val);  
          } 
-         else if(val.isOpening()) { //is true
+         else if(val.isOpening()) {
+            tags.add(val); 
             stack.push(val);
-            tags.add(val);  
-         
-         } else if(val.isClosing()){ //isClosing Scenario
-            //HTMLTag stackPeek = stack.peek();
+              
+         } 
+         else if(val.isClosing()){ 
+               //HTMLTag stackPeek = stack.peek();
             if(!stack.isEmpty() && val.matches(stack.peek())) {
                tags.add(val);
                stack.pop();  
-            } else if (!stack.isEmpty() && !val.matches(stack.peek())) {
+            } 
+            else if (!stack.isEmpty() && !val.matches(stack.peek())) {
                HTMLTag matchFix = val.getMatching();
                tags.add(matchFix);
                stack.pop();
@@ -56,6 +58,10 @@ public class HTMLManager {
             //}
                   
          }
+      }
+      while(!stack.isEmpty()) {
+        HTMLTag sMatchFix = stack.pop().getMatching(); 
+        tags.add(sMatchFix);
       }
    }
    
