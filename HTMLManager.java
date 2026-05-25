@@ -47,15 +47,14 @@ public class HTMLManager {
             } 
             else if (!stack.isEmpty() && !val.matches(stack.peek())) {
                HTMLTag matchFix = val.getMatching();
-               tags.add(matchFix);
-               stack.pop();
+               if(!matchFix.isOpening()) {
+                  tags.add(matchFix);
+                  stack.pop();
+               }
             } 
-            //else if(!val.matches(stack.peek())){
-               //HTMLTag matchFix = val.getMatching();
-               //tags.add(matchFix);
-               //stack.pop();
-                 
-            //}
+            else if(stack.isEmpty()){
+               val = null; //had to google this     
+            }
                   
          }
       }
