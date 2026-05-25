@@ -52,9 +52,9 @@ public class HTMLManager {
                   stack.pop();
                }
             } 
-            else if(stack.isEmpty()){
-               val = null; //had to google this     
-            }
+            //else if(stack.isEmpty()){ //redundant code
+               //val = null;      
+            //}
                   
          }
       }
