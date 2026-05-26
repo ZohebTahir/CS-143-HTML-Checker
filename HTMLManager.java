@@ -40,7 +40,6 @@ public class HTMLManager {
               
          } 
          else if(val.isClosing()){ 
-               //HTMLTag stackPeek = stack.peek();
             if(!stack.isEmpty() && val.matches(stack.peek())) {
                tags.add(val);
                stack.pop();  
@@ -52,15 +51,12 @@ public class HTMLManager {
                   stack.pop();
                }
             } 
-            //else if(stack.isEmpty()){ //redundant code
-               //val = null;      
-            //}
                   
          }
       }
       while(!stack.isEmpty()) {
-        HTMLTag sMatchFix = stack.pop().getMatching(); 
-        tags.add(sMatchFix);
+         HTMLTag sMatchFix = stack.pop().getMatching(); 
+         tags.add(sMatchFix);
       }
    }
    
