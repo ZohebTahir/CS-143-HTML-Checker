@@ -39,8 +39,7 @@ public class HTMLManager {
          //returned to queue/ saved on stack 
          else if(val.isOpening()) {
             tags.add(val); 
-            stack.push(val);
-              
+            stack.push(val);     
          }
          //if matching, aligned in queue 
          else if(val.isClosing()){ 
@@ -56,8 +55,7 @@ public class HTMLManager {
                   tags.add(matchFix);
                   stack.pop();
                }
-            } 
-                  
+            }        
          }
       }
       //Residual tags processed 
@@ -65,6 +63,5 @@ public class HTMLManager {
          HTMLTag sMatchFix = stack.pop().getMatching(); 
          tags.add(sMatchFix);
       }
-   }
-   
+   } 
 }
